@@ -1,0 +1,30 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /pay
+spring:
+  application:
+    name: demo-pay
+
+
+alipay:
+  config:
+      ##支付宝申请的支付商家的appid
+      appId: 2016092700610452
+      ##使用支付宝密钥生成器生成的rsa密钥
+      rsaPrivateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTe9WLvaQBLnV6MRzcqhjcVltHtmmb0ILA5EjnJ33TSVxnp1pJ9hzspGwEhRxvQ42cpbzxvw9JsfPlCVPxAj6Mpe+KMl9THvY3A1zhvEVGLOWN6OsYpOS76NP55VFXJ/45s3JdoC3WjDCxJBP+UntXHbHxhNzyUGPXYgNZXJYe3eKpG7Sgfa2pXx8Mj8BMFA/gQ8D6prAo5dWSq91oOperuQZ3Lqbw5x4kAsxkWkW0O98m8+fNTE2RROV00x0gg0tssdirnAMU/msm5qWClkk7RSL4a3HLgV+qhlX8/eAU0Y2o2lksRTrWEG1mx3tKQ+G4/cSAiRRq8RWcmg8ZzXClAgMBAAECggEATmD4Wxx8pXgYTMj/CrKHJcnrFtB1ja4hXvuzVs1hDEGnjxqcXEQkmQrEsR5Av0zKXJ6kLGGacVLWSDlN1/6WWU7yX6JnkJgax5/M49aXhjTkBifrkRxIxyh0RxE8yjHh5K5eMC2pTqUQV4PR8E3LaL/KSo2OkmRwuw1GtF4FFf+NC3T9D1niSm7i0cDfZJCMYXuYvGSkPZyIHS7IcmjZ/8y6cT/Ael9J4nWh9GJTNmcv5c7N+oLC4U48PswYc97t+7QoyDKrhz+ABtok3c2qZnPXnVImEdxf3sZFj35aq6zk3rYltXjrhWy7DkAsR3pQHkuVFGUerLrJlJuSwI8aIQKBgQDIsm4HnJqGRTLAL02jdHKTI7/v/ze/mrksh8mh98uSiS5KIsbX7cPC22aELvlW4HV8Z/+rdw5JivtvI32MWvMRyyXH8EuDtWd0nZccBzMnq6Wlb87C3SQ5fVxd6xES38hSBAiKNCJbzlu3N2zj5EDXoee8W5S0zNULye5UnZ0nuQKBgQC8H6IrQnmDGs9JK04OP7tpa3qp6nskyLSrnf+oYeSN1iGcgsioJp6FnYJAgWCr2M6QdPJ1YSMccuKg/iKGHx2IojcHATgF/iuEDfGYo3MBiu6KjpbpGboM3HrTeaEqt1YRY/Q2LvxxxjTZ+ST9aDZrlgiUBM2o1YMMkaofm69uTQKBgBHEii0uVhfRBH8zMOJpqsMQBSwQIjVaU0537wfh0in07x4tGgF/0TbtCZRmPDjOwlfzNRVPAvrLzRq3v6OvYZmPrJaY1XahlrkiQoB+uq6maZHN5jYmMdDNImJGL0rGeQuZw8/IccpC6Ke9xmwehwcQFF3+lZm0EKBsjib7lTAxAoGAXsIEWovyTvKLJMz2VUEO8ovbzoi4nI+oSaWdKECe8j7A0WgjEGfbg2wSNtG0UvszGRp/Ilbaa7MGqpc35pz3sGIdG58mjAY5/xtS7VKvVECZ5RrrsuBtkZrhF3J1luGgLcRON5i1Oc3fw0e2tRnwB4McMQq2WOurRgJ9UcyGsiUCgYBSKbXXuXFoWAT0+xS4yBh5S/ond1wpBXkK7z2v2dsaM/14TT4zJJBeeRzbdsTA/eZy3FmliBE+vXiCxi4WcPBqCymU2V8XHiI4esd5UOjVF7k2CroPzSDlwXAq9bYmUSD8+vTuokrpUA6WL9OCPzA+6pizwe4WdngJ7r8MjNE5lQ==
+      ##支付宝公钥
+      aliPayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoZpKYImE2bmar1kuBcbxcsloa1VcMU00rqyYL3vMnZbklFjaOkavIVF7Kj7hnmFNekCmhi7LK8qX/ZchHp2zYozEzXi6Nfvbd6q2XR9XmDYmWHzGTKfNBRyF+Srsx8+FLfXO4tfIxarbyNiWCMNl1ymuyOzAINixVBefaH4rPkKMAMdQ9cbHWbHuio98VljqBjNZvlfgWIxZi48DktgyqwbSLKvn7EgHipbNPgEFQSva25173Y/L1ZK4BnQu6hbhiIRhCLSY90RvL7tJ37BVydydKieO5WziAbQiJfm/eBb40pLW0Dvkj9QpZte9xIl4St8FV5u82k2bGQgHvYNnHwIDAQAB
+      ##支付完成异步通知的地址
+      notifyUrl: http://106.13.41.248:9000/pay/notify_url
+      ##支付完成同步通知的地址
+      returnUrl: http://106.13.41.248:9000/pay/return_url
+      #请求网关地址 正式环境：https://openapi.alipay.com/gateway.do  沙箱环境：https://openapi.alipaydev.com/gateway.do
+      url: https://openapi.alipaydev.com/gateway.do
+
+
+
+
+
+
+
